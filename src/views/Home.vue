@@ -1,55 +1,67 @@
 <template>
-  <div class="hello">
-    <section>
-      <div class="img-wrap">
-        <img src="static/img/icon.jpg" alt="">
+  <div class="view-home">
+    <top-menu :bgImg="bgImg">
+      <div class="heading">
+        <h1>Wax Blog</h1>
+        <p class="subheading">用心生活，用心做事</p>
       </div>
-      <p>{{msg}}</p>
-    </section>
-    <section>
-      <p>这是一个列表</p>
+    </top-menu>
+    <div class="container">
       <ul>
-        <li v-for="item of newList" :key="item.id">
-          {{item.content}}
-        </li>
+        <router-link tag="li" v-for="item of articalList" :key="item.id" :to="`/${item.id}`">
+          
+        </router-link>
       </ul>
-    </section>
+    </div>
   </div>
 </template>
 
 <script>
-import { getList } from '../api';
+import { fetchArticalList } from '../api';
+import topMenu from '@/components/topMenu';
 
 export default {
   name: 'home',
   data() {
     return {
-      msg: 'Welcome to Donut!',
-      newList: [],
+      bgImg: '"static/img/home-bg.jpg"',
+      articalList: [],
     };
   },
   methods: {
-    getNewList() {
-      getList().then((res) => {
+    getArticalList() {
+      const params = {
+        pageIndex: 0,
+        pageSize: 10,
+      };
+      fetchArticalList({ params }).then((res) => {
         const { data } = res;
-        this.newList = data;
+        this.articalList = data;
       });
     },
   },
+  components: {
+    topMenu,
+  },
   mounted() {
-    this.getNewList();
+    this.getArticalList();
   },
 };
 </script>
 
 <style lang="stylus" scoped>
-  section
-    margin-bottom 50px
-  p
-    margin 10px
-  li
-    margin-bottom 10px
-  .img-wrap
-    img
-      width 500px
+  @import '../styles/_variable.styl';
+  .view-home
+    .heading
+      padding 150px 0
+      color color_white
+      h1
+        font-size font_size_80
+      .subheading
+        font-size font_size_18
+        margin-top 20px
+    .container
+      width 1200px
+      margin 0 auto
+
 </style>

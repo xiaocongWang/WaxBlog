@@ -1,6 +1,6 @@
 # Donut
 
-Donut -- 使用 [webpack](https://doc.webpack-china.org) + [vue](https://cn.vuejs.org/v2/guide/) + [vue-router](https://router.vuejs.org/zh-cn) + [stylus](http://stylus-lang.com) 搭建的web应用。
+Donut -- 使用 [webpack](https://doc.webpack-china.org) + [vue](https://cn.vuejs.org/v2/guide/) + [vue-router](https://router.vuejs.org/zh-cn) + [stylus](http://stylus-lang.com) 搭建的Progressive Web App。
 
 ## Build setup
 
