@@ -8,7 +8,7 @@
         <ul>
           <li><router-link to="/">HOME</router-link></li>
           <li><router-link to="/">CATEGORY</router-link></li>
-          <!-- <li><router-link to="/"></router-link></li> -->
+          <li><router-link to="/article/add">POST</router-link></li>
         </ul>
       </div>
     </nav>

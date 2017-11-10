@@ -6,6 +6,10 @@ Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 
+*{
+    box-sizing: border-box;
+}
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -26,7 +30,10 @@ time, mark, audio, video {
     vertical-align:baseline;
     background:transparent;
 }
-
+html, body {
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
 body {
     line-height:1;
 }
@@ -101,4 +108,8 @@ hr {
 
 input, select {
     vertical-align:middle;
+}
+textarea, input{
+    user-select: text;
+    outline:none    
 }

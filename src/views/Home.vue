@@ -80,6 +80,7 @@ export default {
     .heading
       padding 150px 0
       color color_white
+      text-align center
       h1
         font-size font_size_80
       .subheading
